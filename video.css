@@ -18,7 +18,7 @@
   }
 
   #trigger-front {
-    width: 150px;
+    width: 100px;
     background-color: red;
     color: white;
     font-size: 12px;
@@ -34,7 +34,7 @@
 }
 
 #trigger-back {
-    width: 150px;
+    width: 100px;
     background-color: red;
     color: white;
     font-size: 12px;
@@ -50,7 +50,7 @@
 }
 
 #trigger-submit{
-    width: 150px;
+    width: 100px;
     background-color: red;
     color: white;
     font-size: 12px;
