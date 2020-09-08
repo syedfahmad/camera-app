@@ -23,44 +23,44 @@
 
 <body>
     <div class="container text-center p-4 my-3 border">
+        
         <h1>License Image Capture</h1>
         <p>Please take a picture of your front and back driver license</p>
 
-        <main id="camera">
-            <div class="row">
-                <div class="col-sm-12">
-                    <video class="video" id="camera-video" autoplay playsinline></video>
-                </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <video class="video" id="camera-video" autoplay playsinline></video>
+                <canvas class="canvas" id="sensor"></canvas>
             </div>
-            <div class="row">
-                <div class="col-sm-4 pt-2 pb-2">
-                    <button class="btn btn-primary" id="trigger-front">Front</button>
-                </div>
-                <div class="col-sm-4 pt-2 pb-2">
-                    <button class="btn btn-primary" id="trigger-back">Back</button>
-                </div>
-                <div class="col-sm-4 pt-2 pb-2">
-                    <button class="btn btn-primary" id="trigger-submit">Submit</button>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 pt-2 pb-2">
+                <button class="btn btn-primary" id="trigger-front">Front</button>
             </div>
-            <div class="row">
-                <div class="col-sm-12 pt-2 pb-2">
-                    <p class="lead">Front Picture</p>
-                </div>
-                <div class="col-sm-12 pt-2 pb-2">
-                    <canvas class="canvas" id="license-front"></canvas>
-                </div>
+            <div class="col-sm-4 pt-2 pb-2">
+                <button class="btn btn-primary" id="trigger-back">Back</button>
             </div>
-            <div class="row">
-                <div class="col-sm-12 pt-2 pb-2">
-                    <p class="lead">Back Picture</p>
-                </div>
-                <div class="col-sm-12 pt-2 pb-2">
-                    <canvas class="canvas" id="license-back"></canvas>
-                </div>
+            <div class="col-sm-4 pt-2 pb-2">
+                <button class="btn btn-primary" id="trigger-submit">Submit</button>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 pt-2 pb-2">
+                <p class="lead">Front Picture</p>
+            </div>
+            <div class="col-sm-12 pt-2 pb-2">
+                <canvas class="canvas" id="license-front"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 pt-2 pb-2">
+                <p class="lead">Back Picture</p>
+            </div>
+            <div class="col-sm-12 pt-2 pb-2">
+                <canvas class="canvas" id="license-back"></canvas>
+            </div>
+        </div>
             
-        </main>
     </div>
 
     <script src="./video.js"></script>

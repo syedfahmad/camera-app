@@ -1,23 +1,35 @@
 .container {
     margin: 0 auto;
     position: relative;
-  }
-  
-  .video {
+}
+
+.video {
     width: 100%;
     height: auto;
-    /*transform: scaleX(-1);*/
+    top: 0;
+    left: 0;
 }
-  
-  #license-front {
+
+#sensor {
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 0, 0, 0.2);
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
     /*transform: scaleX(-1);*/
 }
 
-  #license-back {
-    /*transform: scaleX(-1);*/
-  }
+#license-front {
+    left: 0;
+}
 
-  #trigger-front {
+#license-back {
+    left: 0;
+}
+
+#trigger-front {
     width: 80px;
     background-color: red;
     color: white;
@@ -26,7 +38,7 @@
     border: none;
     padding: 5px 10px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     bottom: 30px;
     left: calc(50% - 150px);
@@ -42,14 +54,14 @@
     border: none;
     padding: 5px 10px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     bottom: 30px;
     left: calc(50% - 40px);
     z-index: 100;
 }
 
-#trigger-submit{
+#trigger-submit {
     width: 80px;
     background-color: red;
     color: white;
@@ -58,7 +70,7 @@
     border: none;
     padding: 5px 10px;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     bottom: 30px;
     right: calc(50% - 150px);
