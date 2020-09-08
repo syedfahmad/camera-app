@@ -7,10 +7,13 @@ var constraints = {
 };
 // Define constants
 const cameraView = document.querySelector("#camera-video");
+const sensorView = document.querySelector("#sensor");
+
 const frontView = document.querySelector("#license-front");
 const backView = document.querySelector("#license-back");
 const frontTrigger = document.querySelector("#trigger-front");
 const backTrigger = document.querySelector("#trigger-back");
+const submitTrigger = document.querySelector("#trigger-submit");
 
 let videowidth = "";
 let videoheight = "";
@@ -32,8 +35,12 @@ function cameraStart() {
         });
 }
 
-frontTrigger.onclick = () => {
+cameraView.onplay = () => {
+    sensorView.width = cameraView.offsetWidth;
+    sensorView.height = cameraView.offsetHeight;
+}
 
+frontTrigger.onclick = () => {
     frontView.width = cameraView.offsetWidth;
     frontView.height = cameraView.offsetHeight;
 
@@ -53,34 +60,47 @@ backTrigger.onclick = () => {
     licenseBackCtx.drawImage(cameraView, 0, 0, backView.width, backView.height);
 }
 
+submitTrigger.onclick = function () {
     
+    var b64ImageFront = frontView.toDataURL('image/jpeg');
+    var u8ImageFront  = b64ToUint8Array(b64ImageFront);
 
-    /*let cameraOutputContext = cameraOutput.getContext("2d");
-    //cameraOutputContext.drawImage(document.getElementById('test'), 10, 10, 100, 50, 0, 0, 100, 50);
+    let blobImageFront = new Blob([u8ImageFront], {
+        type: 'image/jpg'
+    });
 
-    let xorigin = (cameraSensor.width/videowidth)*100;
-    let yorigin = (cameraSensor.height/videoheight)*100;
-    let adjwidth = (cameraSensor.width/videowidth)*cameraSensor.width;
-    let adjheight = (cameraSensor.height/videoheight)*cameraSensor.height;
-    console.log('xorigin:' + xorigin + ' yorigin:' + yorigin + ' adjwidth:' + adjwidth + ' adjheight:' + adjheight);
-    cameraOutputContext.drawImage(cameraSensor, xorigin, yorigin, adjwidth, adjheight,
-        0, 0, cameraOutput.width, cameraOutput.height);
-    cameraOutputContext.moveTo(0, 0);
-    cameraOutputContext.lineTo(cameraSensor.width, cameraSensor.height);
-    cameraOutputContext.stroke();*/
+    var b64ImageBack = backView.toDataURL('image/jpeg');
+    var u8ImageBack  = b64ToUint8Array(b64ImageBack);
 
-    //ctx.drawImage(cameraView, 0, 0, cameraSensor.width, cameraSensor.height);
-    //ctx.moveTo(0, 0);
-    //ctx.lineTo(cameraSensor.width, cameraSensor.height);
-    //ctx.stroke();
-    //cameraOutput.src = cameraSensor.toDataURL("image/webp");
-    //cameraOutput.style.display = 'block';
-    /*finalOutput.src = cameraSensor.toDataURL("image/webp");
-    finalOutput.classList.add("taken");
+    let blobImageBack = new Blob([u8ImageBack], {
+        type: 'image/jpg'
+    });
 
-    cameraSensor.style.display = 'none';
-    cameraOutput.style.display = 'none';
-    finalOutput.style.display = 'none';*/
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://ff94b00a0b60.ngrok.io/product/ln/consumer/savepicture/', true);
+
+    // define new form
+    let formData = new FormData();
+    formData.append('lnfile', blobImageFront, '1.jpg');
+    formData.append('lnfile', blobImageBack, '2.jpg');
+
+    // action after uploading happens
+    xhr.onload = function (e) {
+        console.log("File uploading completed!");
+    };
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+
+            console.log('Got response from server that the document was submitted...');
+        }
+    }
+
+    // do the uploading
+    console.log("File uploading started!");
+    xhr.send(formData);
+};
+
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
