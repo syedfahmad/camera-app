@@ -18,7 +18,7 @@
   }
 
   #trigger-front {
-    width: 100px;
+    width: 80px;
     background-color: red;
     color: white;
     font-size: 12px;
@@ -29,12 +29,12 @@
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
     bottom: 30px;
-    left: calc(50% - 200);
+    left: calc(50% - 150px);
     z-index: 100;
 }
 
 #trigger-back {
-    width: 100px;
+    width: 80px;
     background-color: red;
     color: white;
     font-size: 12px;
@@ -45,12 +45,12 @@
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
     bottom: 30px;
-    left: calc(50%);
+    left: calc(50% - 40px);
     z-index: 100;
 }
 
 #trigger-submit{
-    width: 100px;
+    width: 80px;
     background-color: red;
     color: white;
     font-size: 12px;
@@ -61,7 +61,7 @@
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
     bottom: 30px;
-    left: calc(50% + 200);
+    right: calc(50% - 150px);
     z-index: 100;
 }
 
