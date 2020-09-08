@@ -29,7 +29,7 @@
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
     bottom: 30px;
-    center: calc(33.33% - 100px);
+    center: calc(33.33% - 50px);
     z-index: 100;
 }
 
@@ -45,7 +45,7 @@
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
     bottom: 30px;
-    left: calc(50% - 100px);
+    left: calc(50% - 50px);
     z-index: 100;
 }
 
@@ -61,7 +61,7 @@
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
     bottom: 30px;
-    right: calc(33.33% - 100px);
+    right: calc(33.33% - 50px);
     z-index: 100;
 }
 
