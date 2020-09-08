@@ -27,11 +27,9 @@
     padding: 5px 10px;
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
     bottom: 30px;
     left: calc(100% - 25px);
     z-index: 100;
-    display:inline-block;
 }
 
 #trigger-back {
@@ -44,11 +42,9 @@
     padding: 5px 10px;
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
     bottom: 30px;
     left: calc(100% - 200px);
     z-index: 100;
-    display:inline-block;
 }
 
 #trigger-submit{
@@ -61,11 +57,9 @@
     padding: 5px 10px;
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
     bottom: 30px;
     right: calc(100% - 25px);
     z-index: 100;
-    display:inline-block;
 }
 
 /*.taken{
