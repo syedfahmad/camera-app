@@ -31,6 +31,7 @@
     bottom: 30px;
     left: calc(100% - 25px);
     z-index: 100;
+    display:inline-block;
 }
 
 #trigger-back {
@@ -47,6 +48,7 @@
     bottom: 30px;
     left: calc(100% - 200px);
     z-index: 100;
+    display:inline-block;
 }
 
 #trigger-submit{
@@ -63,6 +65,7 @@
     bottom: 30px;
     right: calc(100% - 25px);
     z-index: 100;
+    display:inline-block;
 }
 
 /*.taken{
